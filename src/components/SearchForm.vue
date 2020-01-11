@@ -2,17 +2,31 @@
   <div id="search-form">
     <form>
       <label>Search Images</label>
-      <input type="text" />
-      <button>Submit</button>
+      <input v-model="query" type="text" />
+      <button @click="handleSubmit()" type="button">Submit</button>
     </form>
   </div>
 </template>
 
 <script>
+import apiCalls from '../../apiCalls.js'
+import apiKeys from '../../apiKeys.js'
+
 export default {
   name: 'SearchForm',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      query: '',
+      images: []
+    }
+  },
+  methods: {
+    async handleSubmit() {
+      this.images = await apiCalls.getSearchImages(this.query, apiKeys.apiKey)
+    }
   }
 }
 </script>
@@ -34,3 +48,4 @@ a {
   color: #42b983;
 }
 </style>
+
