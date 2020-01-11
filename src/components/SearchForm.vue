@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import apiCalls from '../../apiCalls.js'
 import apiKeys from '../../apiKeys.js'
 
 export default {
@@ -24,8 +23,14 @@ export default {
     }
   },
   methods: {
-    async handleSubmit() {
-      this.images = await apiCalls.getSearchImages(this.query, apiKeys.apiKey)
+    async handleSubmit() {   
+      const response = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${this.query}&client_id=${apiKeys.apiKey}`)
+
+      if (!response.ok) {
+        throw Error(`Failed to fetch images`)
+      }
+      const filteredImages = await response.json()
+      this.images = filteredImages.results
     }
   }
 }
