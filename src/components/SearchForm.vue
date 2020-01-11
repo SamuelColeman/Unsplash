@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import ImageCard from './ImageCard.vue'
 import apiKeys from '../../apiKeys.js'
 
 export default {
@@ -19,7 +20,8 @@ export default {
   data() {
     return {
       query: '',
-      images: []
+      images: [],
+      imageCards: []
     }
   },
   methods: {
@@ -31,6 +33,12 @@ export default {
       }
       const filteredImages = await response.json()
       this.images = filteredImages.results
+      this.displayImages();
+    },
+    displayImages() {
+      this.images.map(image => {
+        this.imageCards.push(<ImageCard url={image.urls.small} />)
+      })
     }
   }
 }
