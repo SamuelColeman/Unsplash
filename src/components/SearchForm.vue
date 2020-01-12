@@ -1,11 +1,9 @@
 <template>
   <div id="search-form">
+    <label>Search Images</label>
     <form>
-      <label>Search Images</label>
-      <div id="search">
-        <input v-model="query" type="text" />
-        <button @click="handleSubmit()" type="button">+</button>
-      </div>
+      <input v-model="query" type="text" />
+      <button @click="handleSubmit()" type="button">+</button>
     </form>
     <div id="image-container">
       <article v-for="image in images" :key="image.id">
@@ -71,7 +69,7 @@ label {
   flex-direction: column;
   max-height: 100vh;
   overflow: scroll;
-  grid-area: image;
+  grid-area: imageContainer;
 }
 img {
   margin-bottom: 4vh;
@@ -89,18 +87,17 @@ button {
 }
 form {
   margin-bottom: 4vh;
+  grid-area: searchBar;
 }
 #search-form {
   display: grid;
   grid-template-areas:
-    "header search search"
-    "header image image"
-    "header image image";
+    "header searchBar searchBar"
+    "header imageContainer imageContainer"
+    "header imageContainer imageContainer";
   grid-template-columns: 25% auto;
   grid-template-rows: 10% auto;
-}
-#search {
-  grid-area: search;
+  height: 100vh;
 }
 </style>
 
