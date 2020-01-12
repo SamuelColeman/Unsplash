@@ -70,9 +70,12 @@ label {
   max-height: 100vh;
   overflow: scroll;
   grid-area: imageContainer;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 img {
-  margin-bottom: 4vh;
+  margin: 2vh;
+  width: 95%;
 }
 input {
   width: 25vh;
