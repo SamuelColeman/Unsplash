@@ -5,18 +5,17 @@
       <input v-model="query" type="text" />
       <button @click="handleSubmit()" type="button">Submit</button>
     </form>
+    <article v-for="image in images" :key="image.id">
+      <img v-bind:src="image.urls.small" />
+    </article>
   </div>
 </template>
 
 <script>
-import ImageCard from './ImageCard.vue'
 import apiKeys from '../../apiKeys.js'
 
 export default {
   name: 'SearchForm',
-  props: {
-    msg: String
-  },
   data() {
     return {
       query: '',
@@ -33,12 +32,6 @@ export default {
       }
       const filteredImages = await response.json()
       this.images = filteredImages.results
-      this.displayImages();
-    },
-    displayImages() {
-      this.images.map(image => {
-        this.imageCards.push(<ImageCard url={image.urls.small} />)
-      })
     }
   }
 }

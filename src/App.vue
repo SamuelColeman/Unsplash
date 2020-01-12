@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SearchForm  msg='Blah blah'/>
+    <SearchForm />
   </div>
 </template>
 
