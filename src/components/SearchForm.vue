@@ -1,13 +1,15 @@
 <template>
   <div id="search-form">
-    <label>Search Images</label>
+    <div id="title">
+      <label>Image Selector</label>
+    </div>
     <form>
       <input v-model="query" type="text" />
-      <button @click="handleSubmit()" type="button">+</button>
+      <button @click="handleSubmit()" type="button">Submit</button>
     </form>
     <div id="image-container">
       <article v-for="image in images" :key="image.id">
-        <img v-bind:src="image.urls.small" />
+        <img @mouseover="mouseOver()" v-bind:src="image.urls.small" />
       </article>
     </div>
   </div>
@@ -56,13 +58,23 @@ a {
   color: #42b983;
 }
 article {
-  display: flex
+  display: flex;
+
 }
 label {
+  font-size: 40px;
+  color: #A28171;
+  background: #D0CCC5;
+  height: 15vh;
+  margin: 2vh;
+  padding: 4vh;
+  border-radius: 10px;
+}
+#title {
   display: flex;
   justify-content: center;
-  font-size: 40px;
   grid-area: header;
+  background: #1D253B;
 }
 #image-container {
   display: flex;
@@ -72,34 +84,47 @@ label {
   grid-area: imageContainer;
   flex-wrap: wrap;
   flex-direction: row;
+  background: #F1F1F1;
 }
 img {
-  margin: 2vh;
-  width: 95%;
+  margin: 4vh 0 4vh 10vh;
+  width: 115%;
+  border-radius: 10px;
 }
 input {
-  width: 25vh;
+  width: 90%;
   height: 5vh;
   font-size: 3vh;
+  border-radius: 10px;
+  background: #D0CCC5;
+  color: #A28171;
+  border: none;
+  padding-left: 1vh;
 }
 button {
-  width: 5vh;
-  height: 5vh;
-  font-size: 30px;
-  border-radius: 22px;
+  margin-top: 2vh;
+  width: 90%;
+  height: 4vh;
+  font-size: 20px;
+  border-radius: 10px;
+  background: #D0CCC5;
+  color: #A28171;
 }
 form {
-  margin-bottom: 4vh;
   grid-area: searchBar;
+  background: #1D253B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #search-form {
   display: grid;
   grid-template-areas:
-    "header searchBar searchBar"
     "header imageContainer imageContainer"
-    "header imageContainer imageContainer";
+    "searchBar imageContainer imageContainer"
+    "searchBar imageContainer imageContainer";
   grid-template-columns: 25% auto;
-  grid-template-rows: 10% auto;
+  grid-template-rows: 35% auto;
   height: 100vh;
 }
 </style>
