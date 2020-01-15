@@ -9,11 +9,6 @@ This project utilizes the Unsplash API to display a page of stock images based o
 * Vue.js
 * Unsplash API
 
-## Screenshots
-
-<img width="1440" alt="Screen Shot 2020-01-15 at 10 58 13 AM" src="https://user-images.githubusercontent.com/47789209/72458634-2a1e5e00-3786-11ea-90fd-cf07385eab43.png">
-<img width="1440" alt="Screen Shot 2020-01-15 at 10 59 16 AM" src="https://user-images.githubusercontent.com/47789209/72458636-2b4f8b00-3786-11ea-8d0a-a86984c9bbb7.png">
-
 ## Local Project setup
 ```
 git clone
@@ -24,3 +19,8 @@ npm install
 ```
 npm run serve
 ```
+
+## Screenshots
+
+<img width="1440" alt="Screen Shot 2020-01-15 at 10 58 13 AM" src="https://user-images.githubusercontent.com/47789209/72458634-2a1e5e00-3786-11ea-90fd-cf07385eab43.png">
+<img width="1440" alt="Screen Shot 2020-01-15 at 10 59 16 AM" src="https://user-images.githubusercontent.com/47789209/72458636-2b4f8b00-3786-11ea-8d0a-a86984c9bbb7.png">
