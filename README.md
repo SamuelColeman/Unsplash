@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project utilizes the Unsplash API to display a page of stock images based on the term that was entered into the search input field. It was my first project built using the Vue.js framework and was designed to serve as an example take home coding challenge that was to be completed within a few days. 
+This project utilizes the Unsplash API to display a page of stock images based on the term that was entered into the search input field. It was my first project built using the Vue.js framework and was designed to serve as an example take home coding challenge that was to be completed within a few days. The application was deployed using GitHub Pages and the live site can be found [here](https://samuelcoleman.github.io/Unsplash/).
 
 ## Built With
 
